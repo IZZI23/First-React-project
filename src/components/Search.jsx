@@ -17,7 +17,7 @@ function Search(props) {
 const FormStyle = styled.form`
   width: 50%;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 0.5rem;
   input {
     margin: 1rem 0rem 2rem 0rem;
     border: none;
@@ -26,7 +26,6 @@ const FormStyle = styled.form`
     color: white;
     padding: 1rem 1rem;
     border-radius: 0.5rem;
-    outline: none;
     width: 100%;
     &::placeholder {
         color: #000000;

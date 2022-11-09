@@ -1,4 +1,3 @@
-import { getByPlaceholderText } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Search from "../components/Search";
@@ -35,6 +34,7 @@ function Weather() {
   return (
     <WeatherDiv>
       <h1>Weather Forecast</h1>
+      <h2>Enter City Name</h2>
         <Search search = {search} setSearch={setSearch} />
       {"location" in weather ? (
         <>
@@ -78,7 +78,7 @@ function Weather() {
 
 
 const WeatherDiv = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   min-height: 140vh;
   background: linear-gradient(45deg, #2e81e0, #7988f3);
   color: white;
@@ -87,7 +87,10 @@ const WeatherDiv = styled.div`
   justify-content: center;
   flex-direction: column;
   h1 {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+  }
+  h2{
+    margin: 1rem;
   }
 `;
 

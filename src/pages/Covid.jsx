@@ -83,11 +83,12 @@ function Covid() {
   return (
     <CovidMain>
       <h1>Covid Information</h1>
-      <Search search = {search} setSearch= {setSearch}/>
+      <h2>Enter Country Name</h2>
+      <Search search={search} setSearch={setSearch} />
 
       {"parameters" in covid ? (
         <>
-          {covid.response.map((a) => { 
+          {covid.response.map((a) => {
             return (
               <div key={a}>
                 <Top>
@@ -132,14 +133,20 @@ function Covid() {
                   <Info>
                     <p>New: {a.deaths.new.toLocaleString("en-US")}</p>
                     <p>Critical: {a.cases.critical.toLocaleString("en-US")}</p>
-                    <p>Total Deaths: {a.deaths.total.toLocaleString("en-US")}</p>
+                    <p>
+                      Total Deaths: {a.deaths.total.toLocaleString("en-US")}
+                    </p>
                   </Info>
                 )}
                 {activeTab === "Tests" && (
                   <Info>
-                    <p>Total Tests Done: {a.tests.total.toLocaleString("en-US")}</p>
+                    <p>
+                      Total Tests Done: {a.tests.total.toLocaleString("en-US")}
+                    </p>
                     <p>Total Cases: {a.cases.total.toLocaleString("en-US")}</p>
-                    <p>Total Deaths: {a.deaths.total.toLocaleString("en-US")}</p>
+                    <p>
+                      Total Deaths: {a.deaths.total.toLocaleString("en-US")}
+                    </p>
                   </Info>
                 )}
 
@@ -160,27 +167,28 @@ function Covid() {
 }
 
 const CovidMain = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: 180vh;
-  min-width: 100vw;
+  max-width: 100vw;
   background-image: url("https://violenceagainstchildren.un.org/sites/violenceagainstchildren.un.org/files/2020/images/coronavirus-covid-19-1024x754.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   box-shadow: inset 8rem 5rem 15rem #000000, inset -8rem -10rem 15rem #000000;
   h1 {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+  }
+  h2 {
+    margin: 1rem;
   }
   .active {
     background: linear-gradient(180deg, #494949, #9f9b51);
     color: white;
   }
 `;
-
-
 
 const Top = styled.div`
   display: flex;
